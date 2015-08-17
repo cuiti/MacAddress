@@ -1,9 +1,14 @@
-# MacAddress plugin for Cordova / PhoneGap
+# Bluetooth MacAddress plugin for Cordova / PhoneGap
+
+This plugin is a version that gets the Bluethooth MacAdress instead of the WIFI one.
+
+* currently only tested on android *
 
 This Plugin is inspired from MacAddress plugins
 [here](https://github.com/purplecabbage/phonegap-plugins/tree/master/Android/MacAddress)
 and [here](https://github.com/jcesarmobile/my-phonegap-plugins/tree/master/iOS/MacAddressPlugin),Using this plugins 
 device MacAddress could be retrieved for Android/iOS devices.
+
 
 It has been successfully tested on Cordova version 3.1.0.
 
@@ -11,7 +16,7 @@ It has been successfully tested on Cordova version 3.1.0.
 
 **For phonegap 3 (CLI)**
 <pre>
-phonegap local plugin add https://github.com/mohamed-salah/MacAddress.git
+phonegap local plugin add https://github.com/jlasarte/MacAddress.git
 </pre>
 
 **Example Usage:**
