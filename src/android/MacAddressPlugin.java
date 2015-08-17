@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.net.wifi.WifiManager;
+import android.bluetooth.BluetoothAdapter;
 
 /**
  * The Class MacAddressPlugin.
@@ -66,9 +66,9 @@ public class MacAddressPlugin extends CordovaPlugin {
      */
     private String getMacAddress() {
         String macAddress = null;
-        WifiManager wm = (WifiManager) this.cordova.getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-        macAddress = wm.getConnectionInfo().getMacAddress();
-
+       // WifiManager wm = (WifiManager) this.cordova.getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+       // macAddress = wm.getConnectionInfo().getMacAddress();
+        macAdress = BluetoothAdapter.getDefaultAdapter().getAddress(); 
         if (macAddress == null || macAddress.length() == 0) {
             macAddress = "00:00:00:00:00:00";
         }
