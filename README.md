@@ -2,7 +2,7 @@
 
 This plugin is a version that gets the Bluethooth MacAdress instead of the WIFI one.
 
-* currently only tested on android *
+**currently only tested on android**
 
 This Plugin is inspired from MacAddress plugins
 [here](https://github.com/purplecabbage/phonegap-plugins/tree/master/Android/MacAddress)
