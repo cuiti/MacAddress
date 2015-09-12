@@ -1,4 +1,4 @@
-package com.badrit.MacAddress;
+package com.github.jlasarte.MacAddress;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;

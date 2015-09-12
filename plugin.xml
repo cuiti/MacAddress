@@ -4,8 +4,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   id="com.badrit.MacAddress"
   version="0.1.0">
-  <name>MacAddress</name>
-  <description>Cordova MacAddress Plugin</description>
+  <name>MacAddressBT</name>
+  <description>Cordova MacAddress BT Plugin</description>
   <license>Apache 2.0</license>
   <keywords>cordova,MacAddress</keywords>
 
@@ -22,7 +22,8 @@
       </feature>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.BLUETOOTH" />
+      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     </config-file>
 
     <source-file src="src/android/MacAddressPlugin.java" target-dir="src/com/badrit/MacAddress/" />
