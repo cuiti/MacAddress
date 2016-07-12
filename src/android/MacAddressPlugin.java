@@ -7,8 +7,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
 import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
+import android.os.Build;
 
 /**
  * The Class MacAddressPlugin.
@@ -66,9 +67,17 @@ public class MacAddressPlugin extends CordovaPlugin {
      */
     private String getMacAddress() {
         String macAddress = null;
+		Context context=this.cordova.getActivity().getApplicationContext(); 
+
        // WifiManager wm = (WifiManager) this.cordova.getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
        // macAddress = wm.getConnectionInfo().getMacAddress();
-        macAddress = BluetoothAdapter.getDefaultAdapter().getAddress(); 
+        
+		 if (Build.VERSION.SDK_INT >= 23) { // Android 6.0 Marshmallow
+			macAddress = android.provider.Settings.Secure.getString(context.getContentResolver(), "bluetooth_address");
+		 } else {
+			 macAddress = BluetoothAdapter.getDefaultAdapter().getAddress(); 
+		 }
+		
         if (macAddress == null || macAddress.length() == 0) {
             macAddress = "00:00:00:00:00:00";
         }
